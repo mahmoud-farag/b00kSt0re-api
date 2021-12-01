@@ -9,7 +9,7 @@ import expressAsyncHandler from 'express-async-handler';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import productRouter from './routers/productRouter.js';
-import setCors from './utils/cors.js';
+// import setCors from './utils/cors.js';
 import orderRouter from './routers/orderRouter.js';
 
  const app = express(), 
@@ -24,10 +24,10 @@ import orderRouter from './routers/orderRouter.js';
         app.use(express.json());
         app.use(express.urlencoded({ extended: true }));
 
-        // set cross origins 
-        app.use((req,res,next)=>{
-            setCors(req,res,next)
-        });
+        // // set cross origins 
+        // app.use((req,res,next)=>{
+        //     setCors(req,res,next)
+        // });
 
    // connect to the db   
         connectToDb(DB_URI);
